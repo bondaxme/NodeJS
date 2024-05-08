@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 60%;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .button {
+            background-color: #0E46A3;
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            padding: 10px 20px;
+            margin: 10px 0;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 24px;
+            display: block;
+            width: 100%;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #3961a0;
+        }
+    </style>
+</head>
+<body>
+    {{> header}}
+    <div class="container">
+        <ul>
+            {{#each cities}}
+                <li><button class="button" onclick="window.location.href='/weather/{{this}}'">{{this}}</button></li>
+            {{/each}}
+        </ul>
+    </div>
+    {{> footer}}
+</body>
+</html>
